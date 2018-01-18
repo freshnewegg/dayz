@@ -64,7 +64,15 @@ export default class Event extends React.Component {
                 style={this.props.layout.inlineStyles()}
                 className={this.props.layout.classNames()}
             >
+                                <span id='close' style={{
+                                    float: 'right',
+                                    display: 'inline-block',
+                                    padding: '2',
+                                    background:'#ccc',
+                                    height:'auto'
+                                }} onClick={() => alert("yo")}>X</span>
                 {children}
+
             </div>
         );
     }
