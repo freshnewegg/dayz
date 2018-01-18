@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import moment from './src/moment-range';
+import moment from './src/moment-range1';
 import Dayz from './src/dayz';
 require('./demo.scss');
 let COUNT = 1;

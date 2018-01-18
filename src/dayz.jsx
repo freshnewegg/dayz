@@ -1,6 +1,6 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
-import moment    from './moment-range';
+import moment    from './moment-range1';
 import Layout    from './api/layout';
 import Day       from './day';
 import XLabels   from './x-labels';

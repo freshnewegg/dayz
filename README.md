@@ -77,6 +77,5 @@ The Dayz component accepts these properties:
 
 ### Development
 
-- `npm start` starts up a local development web-server which rebuilds files when changed
-- `npm test` runs unit tests
-- `npm run build` compiles files in preparation for publishing
+UPDATED:
+run: ./script/demo go to localhost:2222/dayz

@@ -1,6 +1,6 @@
 import EventLayout from './event-layout';
 import C from './constants';
-import moment from '../moment-range';
+import moment from '../moment-range1';
 import EventsCollection from './events-collection';
 
 function cacheKey(day) {
