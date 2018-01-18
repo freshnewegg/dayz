@@ -11,6 +11,7 @@ export default class Event extends React.Component {
         editComponent: PropTypes.func,
         onClick:       PropTypes.func,
         onDoubleClick: PropTypes.func,
+        onCloseClick:      PropTypes.func,
     }
 
     constructor(props) {
@@ -70,7 +71,7 @@ export default class Event extends React.Component {
                                     padding: '2',
                                     background:'#ccc',
                                     height:'auto'
-                                }} onClick={() => alert("yo")}>X</span>
+                                }} onClick={() => this.props.onCloseClick()}>X</span>
                 {children}
 
             </div>

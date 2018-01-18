@@ -18,6 +18,7 @@ export default class Day extends React.PureComponent {
         onEventResize:  PropTypes.func,
         editComponent:  PropTypes.func,
         onEventDoubleClick: PropTypes.func,
+        onCloseClick:   PropTypes.func
     }
 
     constructor() {
@@ -94,6 +95,7 @@ export default class Day extends React.PureComponent {
                     onClick={this.props.onEventClick}
                     editComponent={this.props.editComponent}
                     onDoubleClick={this.props.onEventDoubleClick}
+                    onCloseClick={this.props.onCloseClick}
                 />
             );
             (layout.event.isSingleDay() ? singleDayEvents : allDayEvents).push(event);

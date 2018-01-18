@@ -20,6 +20,7 @@ export default class Dayz extends React.PureComponent {
         onDayDoubleClick:  PropTypes.func,
         onEventClick:      PropTypes.func,
         onEventResize:     PropTypes.func,
+        onCloseClick:      PropTypes.func,
         timeFormat:        PropTypes.string,
     }
 
@@ -74,6 +75,7 @@ export default class Dayz extends React.PureComponent {
                 onDoubleClick={this.props.onDayDoubleClick}
                 onEventClick={this.props.onEventClick}
                 onEventResize={this.props.onEventResize}
+                onCloseClick={this.props.onCloseClick}
             />,
         );
     }
