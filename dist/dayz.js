@@ -681,6 +681,7 @@ var Event$2 = function (_React$Component) {
                 { className: 'evbody', onClick: this.onClick },
                 this.props.layout.event.render()
             );
+            console.log(this.props.layout.event);
             var Edit = this.props.editComponent;
             var children = this.props.layout.isEditing() ? React.createElement(
                 Edit,
@@ -703,7 +704,7 @@ var Event$2 = function (_React$Component) {
                             background: '#ccc',
                             height: 'auto'
                         }, onClick: function onClick() {
-                            return _this2.props.onCloseClick(_this2.props.layout.event.id);
+                            return _this2.props.onCloseClick(_this2.props.layout.event.attributes.id);
                         } },
                     'X'
                 ),
