@@ -20,26 +20,33 @@ class DayzTestComponent extends React.Component {
             display: 'week',
             events: new Dayz.EventsCollection([
                 { content: 'Continuing event Past',
+                    id: '1',
                   range: moment.range(moment('2015-09-08'), moment('2015-09-14')) },
 
                 { content: 'Continuing event Before',
+                    id: '2',
                   range: moment.range('2015-09-04', '2015-09-09') },
 
                 { content: 'Weeklong',
+                    id: '3',
                   range: moment.range('2015-09-06', moment('2015-09-12').endOf('day')) },
 
                 { content: 'A Longer Event',
+                    id: '4',
                   range: moment.range(moment('2015-09-04'), moment('2015-09-14')) },
 
                 { content: 'Inclusive',
+                    id: '5',
                   range: moment.range(moment('2015-09-07'), moment('2015-09-12')) },
 
                 { content: '9am - 2pm (resizable)',
+                    id: '6',
                   resizable: { step: 15 },
                   range: moment.range(moment('2015-09-11').hour(9),
                                       moment('2015-09-11').hour(14)) },
 
                 { content: '8am - 8pm (non-resizable)',
+                    id: '7',
                   range: moment.range(moment('2015-09-07').hour(8),
                                       moment('2015-09-07').hour(20)) },
             ]),
@@ -76,17 +83,18 @@ class DayzTestComponent extends React.Component {
                 <input type="text" autoFocus
                        value={props.event.content()}
                        onChange={onChange}
-                       onBlur={onBlur}
-                />
+                       onBlur={onBlur}/>
                 <button onClick={onDelete}>X</button>
             </div>
         );
     }
 
+    onCloseClick(name) {
+    }
+
     render() {
         return (
             <div className="dayz-test-wrapper">
-
                 <div className="tools">
                     <label>
                         Month: <input type="radio"
@@ -102,14 +110,13 @@ class DayzTestComponent extends React.Component {
                                     checked={'day' === this.state.display} />
                     </label>
                 </div>
-
                 <Dayz {...this.state}
-                      displayHours={[6, 22]}
-                      onEventResize={this.onEventResize}
-                      editComponent={this.editComponent}
-                      onDayDoubleClick={this.addEvent}
-                      onEventClick={this.onEventClick}
-                >
+                  displayHours={[6, 22]}
+                  onEventResize={this.onEventResize}
+                  editComponent={this.editComponent}
+                  onDayDoubleClick={this.addEvent}
+                  onEventClick={this.onEventClick}
+                  onCloseClick={this.onCloseClick}>
                 </Dayz>
             </div>
         );

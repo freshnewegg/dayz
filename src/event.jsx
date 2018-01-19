@@ -11,7 +11,7 @@ export default class Event extends React.Component {
         editComponent: PropTypes.func,
         onClick:       PropTypes.func,
         onDoubleClick: PropTypes.func,
-        onCloseClick:      PropTypes.func,
+        onCloseClick:  PropTypes.func,
     }
 
     constructor(props) {
@@ -63,17 +63,15 @@ export default class Event extends React.Component {
                 ref="element"
                 onMouseDown={this.onDragStart}
                 style={this.props.layout.inlineStyles()}
-                className={this.props.layout.classNames()}
-            >
-                                <span id='close' style={{
-                                    float: 'right',
-                                    display: 'inline-block',
-                                    padding: '2',
-                                    background:'#ccc',
-                                    height:'auto'
-                                }} onClick={() => this.props.onCloseClick()}>X</span>
-                {children}
-
+                className={this.props.layout.classNames()}>
+                    <span id='close' style={{
+                        float: 'right',
+                        display: 'inline-block',
+                        padding: '2',
+                        background:'#ccc',
+                        height:'auto'
+                    }} onClick={() => this.props.onCloseClick(this.props.layout.event.id)}>X</span>
+                    {children}
             </div>
         );
     }
