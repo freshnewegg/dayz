@@ -55,6 +55,7 @@ export default class Event extends React.Component {
                 {this.props.layout.event.render()}
             </div>
         );
+        console.log(this.props.layout.event);
         const Edit = this.props.editComponent;
         const children = this.props.layout.isEditing() ?
             (<Edit event={this.props.layout.event} >{body}</Edit>) : body;
@@ -70,7 +71,7 @@ export default class Event extends React.Component {
                         padding: '2',
                         background:'#ccc',
                         height:'auto'
-                    }} onClick={() => this.props.onCloseClick(this.props.layout.event.id)}>X</span>
+                    }} onClick={() => this.props.onCloseClick(this.props.layout.event.attributes.id)}>X</span>
                     {children}
             </div>
         );
