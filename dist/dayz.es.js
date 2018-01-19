@@ -669,6 +669,8 @@ var Event$2 = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var body = React.createElement(
                 'div',
                 { className: 'evbody', onClick: this.onClick },
@@ -686,8 +688,7 @@ var Event$2 = function (_React$Component) {
                     ref: 'element',
                     onMouseDown: this.onDragStart,
                     style: this.props.layout.inlineStyles(),
-                    className: this.props.layout.classNames()
-                },
+                    className: this.props.layout.classNames() },
                 React.createElement(
                     'span',
                     { id: 'close', style: {
@@ -697,7 +698,7 @@ var Event$2 = function (_React$Component) {
                             background: '#ccc',
                             height: 'auto'
                         }, onClick: function onClick() {
-                            return alert("yo");
+                            return _this2.props.onCloseClick(_this2.props.layout.event.id);
                         } },
                     'X'
                 ),
@@ -712,7 +713,8 @@ Event$2.propTypes = {
     layout: PropTypes.instanceOf(EventLayout),
     editComponent: PropTypes.func,
     onClick: PropTypes.func,
-    onDoubleClick: PropTypes.func
+    onDoubleClick: PropTypes.func,
+    onCloseClick: PropTypes.func
 };
 
 var Label = function Label(_ref) {
@@ -820,7 +822,8 @@ var Day = function (_React$PureComponent) {
                     onDragStart: _this3.onDragStart,
                     onClick: _this3.props.onEventClick,
                     editComponent: _this3.props.editComponent,
-                    onDoubleClick: _this3.props.onEventDoubleClick
+                    onDoubleClick: _this3.props.onEventDoubleClick,
+                    onCloseClick: _this3.props.onCloseClick
                 });
                 (layout.event.isSingleDay() ? singleDayEvents : allDayEvents).push(event);
             });
@@ -883,7 +886,8 @@ Day.propTypes = {
     onEventClick: PropTypes.func,
     onEventResize: PropTypes.func,
     editComponent: PropTypes.func,
-    onEventDoubleClick: PropTypes.func
+    onEventDoubleClick: PropTypes.func,
+    onCloseClick: PropTypes.func
 };
 
 var XLabels = function (_React$PureComponent) {
@@ -1067,7 +1071,8 @@ var Dayz = function (_React$PureComponent) {
                     onClick: _this2.props.onDayClick,
                     onDoubleClick: _this2.props.onDayDoubleClick,
                     onEventClick: _this2.props.onEventClick,
-                    onEventResize: _this2.props.onEventResize
+                    onEventResize: _this2.props.onEventResize,
+                    onCloseClick: _this2.props.onCloseClick
                 });
             });
         }
@@ -1112,6 +1117,7 @@ Dayz.propTypes = {
     onDayDoubleClick: PropTypes.func,
     onEventClick: PropTypes.func,
     onEventResize: PropTypes.func,
+    onCloseClick: PropTypes.func,
     timeFormat: PropTypes.string
 };
 Dayz.defaultProps = {
